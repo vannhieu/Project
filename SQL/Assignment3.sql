@@ -1,6 +1,7 @@
+USE TestingSystem;
 -- question 2
 	SELECT * 
-    FROM 	Department;
+    FROM 	department;
 -- question 3
 
 SELECT	department_id
@@ -28,7 +29,7 @@ WHERE 	createdate = '2020/12/20';
 -- question 7
 
 SELECT	answer_id
-FROM	Aswer
+FROM	Answer
 WHERE	iscorrect >= 4;
 -- question 8
 

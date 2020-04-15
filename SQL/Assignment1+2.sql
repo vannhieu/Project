@@ -57,11 +57,13 @@ CREATE TABLE CategoryQuestion(
 CREATE TABLE Question(
 	question_id			SMALLINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     content				VARCHAR(50),
+    category_id		 	SMALLINT UNSIGNED,
     creategory_id		SMALLINT UNSIGNED,
 	type_id				SMALLINT UNSIGNED,
     creators_id			SMALLINT UNSIGNED,
     createdate			DATE,
-    FOREIGN KEY(type_id)	REFERENCES TypeQuestion(type_id)
+    FOREIGN KEY(type_id)	REFERENCES TypeQuestion(type_id),
+    FOREIGN KEY(category_id)	REFERENCES CategoryQuestion(category_id)
 );
 
 CREATE TABLE Answer(
@@ -189,17 +191,17 @@ VALUES						('hieu'),
 
 -- ADD DATA INTO Question
 
-INSERT INTO Question(content, 		creategory_id, 		type_id, creators_id, createdate)
- VALUES				('cau hoi 1',		'01',			'5', 		'7', 	'2001/10/20'),
-					('cau hoi 2',		'02',			'1', 		'1', 	'2002/10/20'),
-					('cau hoi 3',		'03',			'2', 		'3', 	'2003/10/20'),
-					('cau hoi 4',		'04',			'3', 		'4', 	'2005/10/20'),
-					('cau hoi 5',		'05',			'4', 		'5',    '2004/10/20'),
-					('cau hoi 6',		'06',			'6', 		'6', 	'2006/10/20'),
-					('cau hoi 7',		'07',			'8', 		'8',	'2007/10/20'),
-					('cau hoi 8',		'08',			'9', 		'9', 	'2008/10/20'),
-					('cau hoi 9',		'09',			'10',		'10',	'2009/10/20'),
-					('cau hoi 10',		'10',			'7', 		'2', 	'2000/11/20');
+INSERT INTO Question(content, 			category_id	,	creategory_id, 		type_id, creators_id, createdate)
+ VALUES				('cau hoi 1',		10,						'01',			'5', 		'7', 	'2001/10/20'),
+					('cau hoi 2',		9,						'02',			'1', 		'1', 	'2002/10/20'),
+					('cau hoi 3',		8,						'03',			'2', 		'3', 	'2003/10/20'),
+					('cau hoi 4',		7,						'04',			'3', 		'4', 	'2005/10/20'),
+					('cau hoi 5',		6,						'05',			'4', 		'5',    '2004/10/20'),
+					('cau hoi 6',		5,						'06',			'6', 		'6', 	'2006/10/20'),
+					('cau hoi 7',		4,						'07',			'8', 		'8',	'2007/10/20'),
+					('cau hoi 8',		3,						'08',			'9', 		'9', 	'2008/10/20'),
+					('cau hoi 9',		2,						'09',			'10',		'10',	'2009/10/20'),
+					('cau hoi 10',		1,						'10',			'7', 		'2', 	'2000/11/20');
 					
 -- ADD DATA INTO Answer
 
