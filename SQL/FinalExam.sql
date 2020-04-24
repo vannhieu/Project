@@ -51,7 +51,7 @@ INSERT INTO	`subject`(s_name)
 INSERT INTO	StudentSubject(rn, 	s_id,		mark, 		  date_	  )
 			VALUES		 (1, 	1,			'6', 		 '2000/02/03'),
 						 (2, 	2,			'5',		 '2000/01/03'),
-                         (3, 	3,			'4',			 '2000/04/03');
+                         (3, 	3,			'4',		 '2000/04/03');
                          
                          
 -- b) Viết lệnh để         
